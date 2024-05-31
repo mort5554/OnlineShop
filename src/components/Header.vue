@@ -1,11 +1,14 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup></script>
 <template>
-  <header>
-    <head>
+  <header class="center">
+    <div class="head center">
       <div class="left bluredGreenCircle"></div>
       <div class="right bluredGreenCircle"></div>
       <h1>
+        <div class="topBorder">
+          <div class="topBorder topBorder2"></div>
+        </div>
         <span>MortShop</span>, Twoja Droga do Świata <br />
         Cyfrowej Rozrywki i Produktywności
       </h1>
@@ -14,139 +17,103 @@
         stacjonarnych, podzespołów i akcesoriów i skompletuj <br />
         swój wymarzony zestaw.
       </h3>
-      <div class="wrap">
-        <button class="button">Przeglądaj</button>
-      </div>
-    </head>
+      <button class="searchButton" role="button">Przeglądaj</button>
+    </div>
   </header>
 </template>
 <style scoped>
 header {
-  display: flex;
-  justify-content: center;
-  height: 700px;
+  position: relative;
+  height: 900px;
   overflow: none;
 }
-head {
-  display: flex;
+.head {
   justify-content: flex-start;
-  align-items: center;
   flex-direction: column;
   width: 90%;
   height: 90%;
+  position: relative;
 }
 .left {
   top: 57%;
   left: -16%;
 }
 .right {
-  top: 25%;
+  top: 2%;
   right: -14%;
+}
+.topBorder {
+  width: 100px;
+  height: 100px;
+  border-radius: 6px;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  border-top: 5px solid black;
+  border-left: 5px solid black;
+}
+.topBorder2 {
+  filter: blur(5px);
+  top: -5px;
+  left: -5px;
 }
 .bluredGreenCircle {
   height: 40%;
   width: 30%;
-  background-color: #35cd55;
+  background-color: var(--green);
   position: absolute;
   filter: blur(90px);
   border-radius: 50%;
 }
-head h1 {
+.head h1 {
+  font-family: NotoSansRegular;
   text-align: center;
   margin-top: 5%;
-  font-size: 380%;
+  font-size: 67px;
 }
-head span {
-  color: #6fc682;
+.head span {
+  color: var(--darkgreen);
 }
-head h3 {
+.head h3 {
+  font-family: WorkSansRegular;
   text-align: center;
   margin-top: 3%;
-  font-size: 200%;
+  font-size: 28px;
 }
-.wrap {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.button {
-  min-width: 300px;
-  min-height: 60px;
-  font-family: 'Nunito', sans-serif;
-  font-size: 22px;
-  text-transform: uppercase;
-  letter-spacing: 1.3px;
-  font-weight: 700;
-  color: white;
-  background: #35cd55;
-  background: linear-gradient(90deg, #35cd55 0%, #70c983 100%);
-  border: none;
-  border-radius: 1000px;
-  box-shadow: 12px 10px 24px #3add5d;
-  transition: all 0.3s ease-in-out 0s;
+.searchButton {
+  display: inline-block;
+  font-family: NotoSansBold;
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 2.5;
+  margin-top: 2%;
+  height: 78px;
+  width: 244px;
+  background: linear-gradient(to bottom right, var(--green), var(--darkgreen));
+  border: 0;
+  border-radius: 12px;
+  color: var(--white);
   cursor: pointer;
-  outline: none;
-  position: relative;
-  padding: 10px;
+  outline: transparent;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow 0.2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
 }
-
-button::before {
-  content: '';
-  border-radius: 1000px;
-  min-width: calc(300px + 12px);
-  min-height: calc(60px + 12px);
-  border: 6px solid #35cd55;
-  box-shadow: 0 0 60px #35cd55;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: all 0.3s ease-in-out 0s;
-}
-
-.button:hover,
-.button:focus {
-  color: white;
-  transform: translateY(-6px);
-}
-
-button:hover::before,
-button:focus::before {
-  opacity: 1;
-}
-
-button::after {
-  content: '';
-  width: 30px;
-  height: 30px;
-  border-radius: 100%;
-  border: 6px solid #39a851;
-  position: absolute;
-  z-index: -1;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation: ring 1.5s infinite;
-}
-
-button:hover::after,
-button:focus::after {
-  animation: none;
-  display: none;
-}
-
-@keyframes ring {
-  0% {
-    width: 30px;
-    height: 30px;
-    opacity: 1;
-  }
-  100% {
-    width: 300px;
-    height: 300px;
-    opacity: 0;
-  }
+/*.searchButton:not([disabled]):focus {
+  box-shadow:
+    0 0 0.25rem rgba(0, 0, 0, 0.5),
+    -0.125rem -0.125rem 1rem var(--black),
+    0.125rem 0.125rem 1rem var(--black);
+}*/
+.searchButton:not([disabled]):hover {
+  box-shadow:
+    0 0 0.25rem rgba(0, 0, 0, 0.5),
+    -0.125rem -0.125rem 1rem green,
+    0.125rem 0.125rem 1rem rgb(1, 151, 1);
 }
 </style>
