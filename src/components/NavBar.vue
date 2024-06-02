@@ -7,26 +7,33 @@ import NavCategories from './NavCategories.vue'
     <div class="shopLogoContainer center">
       <img class="shopLogo" src="/navBarIcons/onlineShopLogo.png" />
     </div>
-    <div class="searchBarContainer center">
+    <div class="searchBarContainerDesktop center">
       <input class="searchBar" type="text" placeholder="Search..." /><button class="searchButton">
         <img class="magnifyIcon" src="/navBarIcons/magnifyIcon.svg" />
       </button>
     </div>
     <div class="utilitiesContainer center">
       <div class="utilities">
-        <img class="accountIcon center" src="/navBarIcons/accountIcon.svg" />
+        <img src="/navBarIcons/accountIcon.svg" />
         <h4>Account</h4>
       </div>
       <div class="utilities">
-        <img class="favouriteIcon center" src="/navBarIcons/favouriteIcon.svg" />
+        <img src="/navBarIcons/favouriteIcon.svg" />
         <h4>Favourite</h4>
       </div>
       <div class="utilities">
-        <img class="cartIcon center" src="/navBarIcons/cartIcon.svg" />
+        <img src="/navBarIcons/cartIcon.svg" />
         <h4>Cart</h4>
       </div>
     </div>
   </nav>
+  <div class="searchBarContainerMobile center">
+    <input class="searchBar" type="text" placeholder="Search..." /><button
+      class="searchButton center"
+    >
+      <img class="magnifyIcon" src="/navBarIcons/magnifyIcon.svg" />
+    </button>
+  </div>
   <NavCategories />
 </template>
 <style scoped>
@@ -38,15 +45,57 @@ nav {
   background-color: var(--white);
 }
 .shopLogoContainer,
-.searchBarContainer,
-.utilitiesContainer {
+.searchBarContainerDesktop,
+.utilitiesContainer,
+.searchBarContainerMobile {
   height: 90%;
 }
-.searchBarContainer {
-  width: 40%;
+.searchBarContainerMobile {
+  display: none;
+  height: 70px;
+  background-color: var(--white);
+}
+.searchBarContainerDesktop {
+  width: 30%;
+}
+@media (max-width: 1150px) {
+  .searchBarContainerDesktop {
+    width: 40%;
+  }
+  nav {
+    justify-content: space-around;
+  }
+  .searchButton {
+    display: none;
+  }
+  .utilities img {
+    height: 20px;
+  }
+}
+@media (max-width: 740px) {
+  .searchBarContainerDesktop {
+    display: none;
+  }
+  .searchBarContainerMobile {
+    display: flex;
+  }
+  .searchButton {
+    display: flex;
+  }
+}
+@media (max-width: 450px) {
+  nav > .shopLogoContainer {
+    width: 10px;
+  }
+  .utilities h4 {
+    font-size: 13px;
+  }
+  .utilities img {
+    width: 40px;
+  }
 }
 .shopLogo {
-  width: 45%;
+  height: 100%;
 }
 .searchBar {
   height: 60%;
@@ -59,7 +108,7 @@ nav {
 }
 .searchButton {
   height: 60%;
-  width: 10%;
+  width: 12%;
   margin-left: 2px;
   border: 1.5px solid var(--black);
   border-radius: 3px;
@@ -67,7 +116,7 @@ nav {
   cursor: pointer;
 }
 .magnifyIcon {
-  height: 80%;
+  height: fit-content;
 }
 .utilitiesContainer,
 .shopLogoContainer {
@@ -78,8 +127,9 @@ nav {
   margin-right: 2%;
 }
 .utilities {
-  height: 90%;
-  width: 100px;
+  height: 76px;
+  width: 70%;
+  max-width: 76px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -90,9 +140,7 @@ nav {
 .utilities h4 {
   font-family: FontSansRegular;
 }
-.accountIcon,
-.favouriteIcon,
-.cartIcon {
+.utilities img {
   height: 60%;
 }
 </style>

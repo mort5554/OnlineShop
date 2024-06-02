@@ -11,21 +11,23 @@
         </div>
         <span>MortShop</span>, Twoja Droga do Świata <br />
         Cyfrowej Rozrywki i Produktywności
+        <div class="bottomBorder">
+          <div class="bottomBorder bottomBorder2"></div>
+        </div>
       </h1>
+      <div class="signX">+</div>
       <h3>
         Odkryj naszą bogatą ofertę laptopów, komputerów <br />
         stacjonarnych, podzespołów i akcesoriów i skompletuj <br />
         swój wymarzony zestaw.
       </h3>
-      <button class="searchButton" role="button">Przeglądaj</button>
+      <button class="searchButton">Przeglądaj</button>
     </div>
   </header>
 </template>
 <style scoped>
 header {
-  position: relative;
-  height: 900px;
-  overflow: none;
+  overflow: hidden;
 }
 .head {
   justify-content: flex-start;
@@ -43,18 +45,33 @@ header {
   right: -14%;
 }
 .topBorder {
-  width: 100px;
-  height: 100px;
+  width: 139px;
+  height: 139px;
   border-radius: 6px;
   position: absolute;
   top: 0%;
   left: 0%;
-  border-top: 5px solid black;
-  border-left: 5px solid black;
+  border-top: 5px solid var(--black);
+  border-left: 5px solid var(--black);
 }
 .topBorder2 {
   filter: blur(5px);
   top: -5px;
+  left: -5px;
+}
+.bottomBorder {
+  width: 139px;
+  height: 139px;
+  border-radius: 6px;
+  position: absolute;
+  bottom: 0%;
+  right: -1%;
+  border-bottom: 5px solid var(--green);
+  border-right: 5px solid var(--green);
+}
+.bottomBorder2 {
+  filter: blur(5px);
+  bottom: -5px;
   left: -5px;
 }
 .bluredGreenCircle {
@@ -70,6 +87,9 @@ header {
   text-align: center;
   margin-top: 5%;
   font-size: 67px;
+  padding: 20px;
+  width: 70%;
+  position: relative;
 }
 .head span {
   color: var(--darkgreen);
@@ -79,6 +99,49 @@ header {
   text-align: center;
   margin-top: 3%;
   font-size: 28px;
+}
+@media (max-width: 970px) {
+  .head h1 {
+    font-size: 45px;
+    width: 100%;
+    padding: 15px;
+  }
+  .head h3 {
+    font-size: 20px;
+  }
+  .searchButton {
+    font-size: 22px;
+    height: 70px;
+    width: 240px;
+  }
+}
+@media (max-width: 450px) {
+  .head h1 {
+    font-size: 40px;
+  }
+}
+.signX {
+  position: absolute;
+  padding-right: 10px;
+  font-family: NotoSansRegular;
+  transform: rotate(15deg);
+  color: var(--white);
+  font-size: 544px;
+  top: 0%;
+  left: 0%;
+  -webkit-text-stroke: 1px var(--seaweed);
+  user-select: none;
+}
+.signX::after {
+  content: '+';
+  position: absolute;
+  right: 5%;
+  top: -0.8%;
+}
+@media (max-width: 1180px) {
+  .signX {
+    display: none;
+  }
 }
 .searchButton {
   display: inline-block;
@@ -104,16 +167,10 @@ header {
   touch-action: manipulation;
   white-space: nowrap;
 }
-/*.searchButton:not([disabled]):focus {
-  box-shadow:
-    0 0 0.25rem rgba(0, 0, 0, 0.5),
-    -0.125rem -0.125rem 1rem var(--black),
-    0.125rem 0.125rem 1rem var(--black);
-}*/
 .searchButton:not([disabled]):hover {
   box-shadow:
-    0 0 0.25rem rgba(0, 0, 0, 0.5),
-    -0.125rem -0.125rem 1rem green,
-    0.125rem 0.125rem 1rem rgb(1, 151, 1);
+    0 0 0.25rem var(--black),
+    -0.125rem -0.125rem 1rem var(--green),
+    0.125rem 0.125rem 1rem var(--darkgreen);
 }
 </style>

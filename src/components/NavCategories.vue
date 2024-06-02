@@ -10,7 +10,8 @@
       <img class="arrowIcon" src="/public/navBarIcons/arrowLeftIcon.svg" />
     </div>
     <div class="category computerComponentsCategory center">
-      <h2>Computer Components</h2>
+      <h2 class="computerComponentsDesktop">Computer Components</h2>
+      <h2 class="computerComponentsMobile">Components</h2>
       <img class="arrowIcon" src="/public/navBarIcons/arrowLeftIcon.svg" />
     </div>
     <div class="category accessoriesCategory center">
@@ -39,5 +40,34 @@
 .arrowIcon {
   height: 32%;
   padding-left: 2%;
+}
+.computerComponentsMobile {
+  display: none;
+}
+@media (max-width: 1109px) {
+  .category h2 {
+    font-size: 25px;
+  }
+}
+@media (max-width: 505px) {
+  .category h2 {
+    font-size: 20px;
+  }
+  .arrowIcon {
+    height: 22%;
+  }
+}
+@media (max-width: 450px) {
+  .category h2 {
+    font-size: 18px;
+  }
+}
+@media (max-width: 965px) {
+  .computerComponentsDesktop {
+    display: none;
+  }
+  .computerComponentsMobile {
+    display: flex;
+  }
 }
 </style>

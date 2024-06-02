@@ -15,6 +15,7 @@ import NavBar from './components/NavBar.vue'
   --green: #35cd55;
   --lightgreen: #8ce8a0;
   --darkgreen: #6fc682;
+  --seaweed: #2b4531;
 }
 .center {
   display: flex;
