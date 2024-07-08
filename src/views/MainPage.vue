@@ -1,15 +1,15 @@
 <script setup>
 import Header from '../components/Header.vue'
+import Sales from '../components/MainPageSales.vue'
 </script>
 <template>
   <main>
     <Header />
+    <Sales />
   </main>
 </template>
 <style scoped>
 main {
-  height: 100%;
-  width: 100vw;
   background-color: var(--white);
 }
 </style>

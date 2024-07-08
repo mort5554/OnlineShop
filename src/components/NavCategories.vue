@@ -2,20 +2,22 @@
 <template>
   <div class="categoriesContainer center">
     <div class="category laptopsCategory center">
-      <h2>Laptops</h2>
+      <h4>Laptops</h4>
       <img class="arrowIcon" src="/public/navBarIcons/arrowLeftIcon.svg" />
     </div>
     <div class="category computersCategory center">
-      <h2>Computers</h2>
+      <h4 class="computersDesktop">Pre-built Computers</h4>
+      <h4 class="computersMobile">Computers</h4>
       <img class="arrowIcon" src="/public/navBarIcons/arrowLeftIcon.svg" />
     </div>
     <div class="category computerComponentsCategory center">
-      <h2 class="computerComponentsDesktop">Computer Components</h2>
-      <h2 class="computerComponentsMobile">Components</h2>
+      <h4 class="computerComponentsDesktop">Computer Components</h4>
+      <h4 class="computerComponentsMobile">Components</h4>
       <img class="arrowIcon" src="/public/navBarIcons/arrowLeftIcon.svg" />
     </div>
     <div class="category accessoriesCategory center">
-      <h2>Accessories</h2>
+      <h4 class="externalHardwareDesktop">External hardware</h4>
+      <h4 class="externalHardwareMobile">Accessories</h4>
       <img class="arrowIcon" src="/public/navBarIcons/arrowLeftIcon.svg" />
     </div>
   </div>
@@ -23,51 +25,55 @@
 <style scoped>
 .categoriesContainer {
   justify-content: space-around;
-  height: 70px;
+  height: 50px;
   width: 100vw;
-  background-color: #2b4531;
+  background-color: var(--black);
 }
 .category {
   height: 90%;
   width: 23%;
   color: var(--white);
-  cursor: pointer;
 }
-.category h2 {
-  font-family: HuangRegular;
-  font-size: 29px;
+.category h4 {
+  font-size: 20px;
+  cursor: pointer;
 }
 .arrowIcon {
   height: 32%;
   padding-left: 2%;
 }
-.computerComponentsMobile {
+.computerComponentsMobile,
+.computersMobile,
+.externalHardwareMobile {
   display: none;
 }
-@media (max-width: 1109px) {
-  .category h2 {
-    font-size: 25px;
+@media (max-width: 652px) {
+  .category h4 {
+    font-size: 15px;
   }
-}
-@media (max-width: 505px) {
-  .category h2 {
-    font-size: 20px;
+  .externalHardwareMobile {
+    display: flex;
+  }
+  .externalHardwareDesktop {
+    display: none;
   }
   .arrowIcon {
-    height: 22%;
-  }
-}
-@media (max-width: 450px) {
-  .category h2 {
-    font-size: 18px;
+    height: 28%;
   }
 }
 @media (max-width: 965px) {
-  .computerComponentsDesktop {
+  .computerComponentsDesktop,
+  .computersDesktop {
     display: none;
   }
-  .computerComponentsMobile {
+  .computerComponentsMobile,
+  .computersMobile {
     display: flex;
+  }
+}
+@media (max-width: 1111px) {
+  .category h4 {
+    font-size: 90%;
   }
 }
 </style>

@@ -1,146 +1,146 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup>
+//import { RouterLink } from 'vue-router'
+
 import NavCategories from './NavCategories.vue'
 </script>
 <template>
   <nav>
-    <div class="shopLogoContainer center">
-      <img class="shopLogo" src="/navBarIcons/onlineShopLogo.png" />
-    </div>
-    <div class="searchBarContainerDesktop center">
-      <input class="searchBar" type="text" placeholder="Search..." /><button class="searchButton">
-        <img class="magnifyIcon" src="/navBarIcons/magnifyIcon.svg" />
-      </button>
-    </div>
-    <div class="utilitiesContainer center">
-      <div class="utilities">
-        <img src="/navBarIcons/accountIcon.svg" />
-        <h4>Account</h4>
+    <div class="desktopView center">
+      <div class="shopLogoContainer center">
+        <img class="shopLogo" src="/navBarIcons/onlineShopLogo.png" />
       </div>
-      <div class="utilities">
-        <img src="/navBarIcons/favouriteIcon.svg" />
-        <h4>Favourite</h4>
+      <div class="searchBarContainerDesktop center">
+        <div class="searchBar center">
+          <img src="/navBarIcons/magnifyIcon.svg" class="magnifyIcon center" alt="magnifyIcon" />
+          <input type="search" class="inputSearchBar" placeholder="Search" />
+        </div>
       </div>
-      <div class="utilities">
-        <img src="/navBarIcons/cartIcon.svg" />
-        <h4>Cart</h4>
+      <div class="utilitiesContainer center">
+        <div class="utilitie center">
+          <img src="/public/navBarIcons/accountIcon.svg" alt="accountIcon" />
+          <p>Account</p>
+        </div>
+        <div class="utilitie center">
+          <img src="/public/navBarIcons/favouriteIcon.svg" alt="accountIcon" />
+          <p>Account</p>
+        </div>
+        <div class="utilitie center">
+          <img src="/public/navBarIcons/cartIcon.svg" alt="accountIcon" />
+          <p>Cart</p>
+        </div>
+      </div>
+    </div>
+    <div class="mobileView center">
+      <div class="searchBarContainerMobile center">
+        <div class="searchBar center">
+          <img src="/navBarIcons/magnifyIcon.svg" class="magnifyIcon center" alt="magnifyIcon" />
+          <input type="search" class="inputSearchBar" placeholder="Search" />
+        </div>
       </div>
     </div>
   </nav>
-  <div class="searchBarContainerMobile center">
-    <input class="searchBar" type="text" placeholder="Search..." /><button
-      class="searchButton center"
-    >
-      <img class="magnifyIcon" src="/navBarIcons/magnifyIcon.svg" />
-    </button>
-  </div>
+
   <NavCategories />
 </template>
 <style scoped>
 nav {
   display: flex;
   width: 100vw;
-  height: 100px;
-  justify-content: space-between;
-  background-color: var(--white);
+  height: 72px;
+  flex-direction: column;
+  background-color: var(--whiteSecondary);
 }
-.shopLogoContainer,
-.searchBarContainerDesktop,
-.utilitiesContainer,
-.searchBarContainerMobile {
-  height: 90%;
+.desktopView {
+  width: 100%;
+  justify-content: space-around;
+  flex-direction: row;
 }
-.searchBarContainerMobile {
+.mobileView {
   display: none;
-  height: 70px;
-  background-color: var(--white);
+  width: 100%;
+  height: 40px;
 }
-.searchBarContainerDesktop {
-  width: 30%;
-}
-@media (max-width: 1150px) {
-  .searchBarContainerDesktop {
-    width: 40%;
-  }
-  nav {
-    justify-content: space-around;
-  }
-  .searchButton {
-    display: none;
-  }
-  .utilities img {
-    height: 20px;
-  }
-}
-@media (max-width: 740px) {
-  .searchBarContainerDesktop {
-    display: none;
-  }
-  .searchBarContainerMobile {
-    display: flex;
-  }
-  .searchButton {
-    display: flex;
-  }
-}
-@media (max-width: 450px) {
-  nav > .shopLogoContainer {
-    width: 10px;
-  }
-  .utilities h4 {
-    font-size: 13px;
-  }
-  .utilities img {
-    width: 40px;
-  }
+.shopLogoContainer {
+  width: 20%;
+  height: 100%;
 }
 .shopLogo {
+  height: 70px;
+  cursor: pointer;
+}
+.searchBarContainerDesktop {
+  width: 40%;
+  height: 100%;
+}
+.searchBarContainerMobile {
+  width: 40%;
   height: 100%;
 }
 .searchBar {
-  height: 60%;
-  width: 80%;
-  padding-left: 1%;
-  border: 1.5px solid var(--black);
-  border-radius: 3px;
-  background-color: var(--white);
-  font-size: large;
-}
-.searchButton {
-  height: 60%;
-  width: 12%;
-  margin-left: 2px;
-  border: 1.5px solid var(--black);
-  border-radius: 3px;
-  background-color: var(--white);
-  cursor: pointer;
+  width: 100%;
+  height: 42px;
+  border: 1px solid var(--black);
+  gap: 10px;
+  padding: 10px;
+  background-color: white;
 }
 .magnifyIcon {
-  height: fit-content;
+  width: 20px;
+  height: 20px;
 }
-.utilitiesContainer,
-.shopLogoContainer {
-  width: 20%;
+.inputSearchBar {
+  width: 100%;
+  height: 40px;
+  border: none;
+  outline: none;
+  font-size: large;
 }
 .utilitiesContainer {
-  gap: 30px;
-  margin-right: 2%;
+  width: 20%;
+  height: 100%;
+  gap: 6%;
 }
-.utilities {
-  height: 76px;
-  width: 70%;
-  max-width: 76px;
-  display: flex;
+.utilitie {
   flex-direction: column;
-  align-items: center;
-  border: 1px solid var(--black);
-  border-radius: 3px;
+}
+.utilitie img {
+  width: 28px;
+  height: 26px;
   cursor: pointer;
 }
-.utilities h4 {
-  font-family: FontSansRegular;
+.utilitie p {
+  cursor: pointer;
 }
-.utilities img {
-  height: 60%;
+@media (max-width: 526px) {
+  nav {
+    height: 132px;
+  }
+  .utilitiesContainer {
+    width: 40%;
+    gap: 20px;
+  }
+  .searchBarContainerDesktop {
+    display: none;
+  }
+  .mobileView {
+    display: flex;
+  }
+  .searchBarContainerMobile {
+    width: 60%;
+  }
+}
+@media (max-width: 655px) {
+  .shopLogoContainer {
+    width: 10%;
+  }
+  .searchBarContainerDesktop {
+    width: 35%;
+  }
+}
+@media (max-width: 930px) {
+  nav {
+    justify-content: space-around;
+  }
 }
 </style>
