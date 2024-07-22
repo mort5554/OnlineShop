@@ -1,11 +1,15 @@
 <script setup>
 import Header from '../components/Header.vue'
-import Sales from '../components/MainPageSales.vue'
+import BestsellersProducts from '../components/BestsellersProducts.vue'
+import DiscountsProducts from '../components/DiscountsProducts.vue'
+import FAQsSection from '../components/FAQsSection.vue'
 </script>
 <template>
   <main>
     <Header />
-    <Sales />
+    <BestsellersProducts />
+    <DiscountsProducts />
+    <FAQsSection />
   </main>
 </template>
 <style scoped>

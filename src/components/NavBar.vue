@@ -23,7 +23,7 @@ import NavCategories from './NavCategories.vue'
         </div>
         <div class="utilitie center">
           <img src="/public/navBarIcons/favouriteIcon.svg" alt="accountIcon" />
-          <p>Account</p>
+          <p>Favourite</p>
         </div>
         <div class="utilitie center">
           <img src="/public/navBarIcons/cartIcon.svg" alt="accountIcon" />
