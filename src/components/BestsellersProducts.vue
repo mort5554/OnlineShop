@@ -81,6 +81,11 @@ import ProductsCard from './ProductsCard.vue'
   display: flex;
   flex-direction: column;
 }
+.rightSideHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
 .bestsellersHeader h4,
 h1 {
   font-weight: 700;
@@ -91,19 +96,12 @@ h1 {
   font-size: 50px;
 }
 .buttonViewAllBestsellers {
-  position: absolute;
   width: 102px;
   height: 48px;
-  display: flex;
-  flex-direction: column;
-  align-self: flex-end;
-  justify-self: flex-end;
   border-radius: 8px;
-  bottom: 50px;
   border: 1px solid var(--black);
   background-color: var(--white);
   cursor: pointer;
-  bottom: -10%;
 }
 /* Bestsellers Products */
 .productsCardContainer {

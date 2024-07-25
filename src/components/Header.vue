@@ -21,8 +21,9 @@
 <style scoped>
 header {
   overflow: hidden;
-  height: 508px;
+  height: fit-content;
   background-color: var(--white);
+  padding-bottom: 7%;
 }
 .head {
   justify-content: flex-start;

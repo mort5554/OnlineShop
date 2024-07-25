@@ -49,9 +49,10 @@ import NavCategories from './NavCategories.vue'
 </template>
 <style scoped>
 nav {
-  display: flex;
   width: 100vw;
-  height: 72px;
+  height: 9vh;
+  display: flex;
+  justify-content: center;
   flex-direction: column;
   background-color: var(--whiteSecondary);
 }
@@ -68,6 +69,7 @@ nav {
   display: none;
   width: 100%;
   height: 40px;
+  margin-bottom: 8px;
 }
 .shopLogoContainer {
   width: 20%;

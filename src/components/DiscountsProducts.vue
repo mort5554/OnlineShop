@@ -30,10 +30,11 @@ import ProductsCard from './ProductsCard.vue'
 }
 .discountsProductsHeader {
   width: 90%;
-  height: 180px;
+  height: fit-content;
   flex-direction: column;
   justify-items: flex-start;
   gap: 10px;
+  margin-bottom: 20px;
 }
 .greenLine {
   width: 100%;

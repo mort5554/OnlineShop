@@ -25,7 +25,7 @@
 <style scoped>
 .categoriesContainer {
   justify-content: space-around;
-  height: 50px;
+  height: 6vh;
   width: 100vw;
   background-color: var(--black);
 }
@@ -47,10 +47,23 @@
 .externalHardwareMobile {
   display: none;
 }
-@media (max-width: 652px) {
-  .category h4 {
-    font-size: 15px;
+.category h4:hover {
+  box-shadow:
+    1px 1px 4px 1px rgba(150, 149, 149, 0.2) inset,
+    -1px -1px 1px var(--greenSecondary) inset;
+  border-radius: 5px;
+}
+@media (max-width: 458px) {
+  .arrowIcon {
+    display: none;
   }
+}
+@media (max-width: 632px) {
+  .category h4 {
+    font-size: 100%;
+  }
+}
+@media (max-width: 876px) {
   .externalHardwareMobile {
     display: flex;
   }
@@ -62,18 +75,19 @@
   }
 }
 @media (max-width: 965px) {
-  .computerComponentsDesktop,
   .computersDesktop {
     display: none;
   }
-  .computerComponentsMobile,
   .computersMobile {
     display: flex;
   }
 }
-@media (max-width: 1111px) {
-  .category h4 {
-    font-size: 90%;
+@media (max-width: 1054px) {
+  .computerComponentsDesktop {
+    display: none;
+  }
+  .computerComponentsMobile {
+    display: flex;
   }
 }
 </style>
