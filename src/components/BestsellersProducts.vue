@@ -77,7 +77,7 @@ import ProductsCard from './ProductsCard.vue'
 .leftSideHeader,
 .rightSideHeader {
   width: 50%;
-  height: 104px;
+  height: 80%;
   display: flex;
   flex-direction: column;
 }
@@ -94,6 +94,11 @@ h1 {
 }
 .bestsellersHeader h1 {
   font-size: 50px;
+}
+@media (max-width: 446px) {
+  .bestsellersHeader h1 {
+    font-size: 40px;
+  }
 }
 .buttonViewAllBestsellers {
   width: 102px;

@@ -41,14 +41,16 @@ import { RouterLink } from 'vue-router'
 <style scoped>
 footer {
   width: 100vw;
-  height: 25vh;
+  height: fit-content;
   flex-direction: column;
   justify-content: space-around;
   background-color: var(--whiteSecondary);
+  padding-top: 2%;
+  padding-bottom: 5%;
 }
 .firstFooterElement {
   width: 90%;
-  height: 50px;
+  height: 110px;
   justify-content: space-around;
 }
 .footerLinks {
@@ -61,6 +63,7 @@ footer {
   gap: 25px;
 }
 .footerAppsIconMobile {
+  height: 50px;
   display: none;
   height: fit-content;
   padding: 10px;

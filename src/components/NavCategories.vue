@@ -25,7 +25,7 @@
 <style scoped>
 .categoriesContainer {
   justify-content: space-around;
-  height: 6vh;
+  height: 60px;
   width: 100vw;
   background-color: var(--black);
 }
@@ -82,7 +82,7 @@
     display: flex;
   }
 }
-@media (max-width: 1054px) {
+@media (max-width: 1072px) {
   .computerComponentsDesktop {
     display: none;
   }

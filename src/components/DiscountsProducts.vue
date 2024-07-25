@@ -33,6 +33,7 @@ import ProductsCard from './ProductsCard.vue'
   height: fit-content;
   flex-direction: column;
   justify-items: flex-start;
+  text-align: center;
   gap: 10px;
   margin-bottom: 20px;
 }

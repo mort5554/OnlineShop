@@ -50,7 +50,7 @@ import NavCategories from './NavCategories.vue'
 <style scoped>
 nav {
   width: 100vw;
-  height: 9vh;
+  height: 9%;
   display: flex;
   justify-content: center;
   flex-direction: column;
