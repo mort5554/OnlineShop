@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup>
-//import { RouterLink } from 'vue-router'
+import { RouterLink } from 'vue-router'
 
 import NavCategories from './NavCategories.vue'
 </script>
@@ -8,7 +8,9 @@ import NavCategories from './NavCategories.vue'
   <nav>
     <div class="desktopView center">
       <div class="shopLogoContainer center">
-        <img class="shopLogo" src="/navBarIcons/onlineShopLogo.png" />
+        <RouterLink to="/">
+          <img class="ElectroHut Logo" src="/onlineShopLogo.png" />
+        </RouterLink>
       </div>
       <div class="searchBarContainerDesktop center">
         <div class="searchBar center">
@@ -17,10 +19,12 @@ import NavCategories from './NavCategories.vue'
         </div>
       </div>
       <div class="utilitiesContainer center">
-        <div class="utilitie center">
-          <img src="/public/navBarIcons/accountIcon.svg" alt="accountIcon" />
-          <p>Account</p>
-        </div>
+        <RouterLink class="link" to="/Account">
+          <div class="utilitie center">
+            <img src="/public/navBarIcons/accountIcon.svg" alt="accountIcon" />
+            <p>Account</p>
+          </div>
+        </RouterLink>
         <div class="utilitie center">
           <img src="/public/navBarIcons/favouriteIcon.svg" alt="accountIcon" />
           <p>Favourite</p>
@@ -50,6 +54,10 @@ nav {
   height: 72px;
   flex-direction: column;
   background-color: var(--whiteSecondary);
+}
+.link {
+  text-decoration: none;
+  color: var(--black);
 }
 .desktopView {
   width: 100%;

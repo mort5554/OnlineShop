@@ -34,12 +34,12 @@ import ProductsCard from './ProductsCard.vue'
       <div class="slideButtonsContainer center">
         <img
           class="slideButtonLeft"
-          src="/public/navBarIcons/slideButtonIcon.svg"
+          src="/mainPageIcons/slideButtonIcon.svg"
           alt="slideButtonIcon"
         />
         <img
           class="slideButtonRight"
-          src="/public/navBarIcons/slideButtonIcon.svg"
+          src="/mainPageIcons/slideButtonIcon.svg"
           alt="slideButtonIcon"
         />
       </div>

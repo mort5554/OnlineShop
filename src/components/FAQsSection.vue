@@ -119,8 +119,8 @@ const isOpened5 = ref(false)
 <style scoped>
 .FAQsSectionContainer {
   width: 100vw;
-  height: 1152px;
-  padding-top: 100px;
+  height: fit-content;
+  padding: 100px 30px;
 }
 /* Letf Side*/
 .FAQsSectionLeft {
@@ -145,19 +145,33 @@ const isOpened5 = ref(false)
   background-color: var(--white);
   cursor: pointer;
 }
+@media (max-width: 827px) {
+  .FAQsSectionLeft {
+    width: 40%;
+  }
+  .FAQsSectionLeft h1 {
+    font-size: 50px;
+  }
+  .FAQsSectionLeft h2 {
+    font-size: 18px;
+  }
+}
 /* Right Side*/
 .FAQsSectionRight {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   width: 45%;
   align-self: flex-start;
 }
 .FAQsElement {
   width: 100%;
   border: 1px solid black;
-  margin: 3%;
-  padding: 3%;
+  padding: 25px;
 }
 .FAQsElementHeader {
   width: 90%;
+  font-weight: 600;
 }
 .FAQsElementTop {
   height: 50px;
@@ -166,24 +180,29 @@ const isOpened5 = ref(false)
   align-items: center;
 }
 .FAQsElementClosed {
-  display: none;
-  height: 0%;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+  margin-top: 12px;
+}
+@media (max-width: 827px) {
+  .FAQsSectionRight {
+    width: 55%;
+    margin-left: 15px;
+  }
+  .FAQsElementHeader {
+    font-size: large;
+  }
+  .FAQsElementOpened {
+    font-size: small;
+  }
 }
 .FAQsElementOpened {
-  display: block;
+  max-height: 100px;
 }
 .smoothlyOpen {
   transition: all 0.3s ease-in;
-  /*animation: open 0.6s ease-out;*/
 }
-/*@keyframes open {
-  from {
-    transform: scaleY(50%);
-  }
-  to {
-    transform: scaleY(100%);
-  }
-}*/
 .FAQsElementOpenButton {
   display: flex;
   justify-content: flex-end;

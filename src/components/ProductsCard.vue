@@ -10,10 +10,10 @@
       <div class="rightSideCard">
         <img
           class="favouriteIcon showIcon"
-          src="/navBarIcons/favouriteIcon.svg"
+          src="/public/userAccountIcons/favouriteIcon.svg"
           alt="favouriteIcon"
         />
-        <img class="cartAddIcon showIcon" src="/navBarIcons/cartAddIcon.svg" alt="" />
+        <img class="cartAddIcon showIcon" src="/mainPageIcons/cartAddIcon.svg" alt="Add To Cart" />
       </div>
     </div>
   </div>
