@@ -330,14 +330,20 @@ const isOpened5 = ref(false)
   display: none;
   flex-direction: column;
 }
-@media (max-width: 444px) {
+@media (max-width: 1090px) {
   .FAQsSectionLeft {
     width: 90%;
   }
   .FAQsSectionRightMobile {
     display: flex;
-    margin-top: 40px;
+    margin-top: 50px;
     gap: 20px;
+  }
+  .FAQsElementClosed {
+    font-size: small;
+  }
+  .FAQsElement {
+    padding: 15px;
   }
   .FAQsSectionRightDesktop {
     display: none;

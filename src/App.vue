@@ -1,14 +1,10 @@
 <script setup>
 import { RouterView } from 'vue-router'
-import NavBar from './components/NavBar.vue'
-import FooterSection from './components/FooterSection.vue'
 import '@/assets/fonts/GeneralSans-Variable.woff'
 </script>
 
 <template>
-  <NavBar />
   <RouterView />
-  <FooterSection />
 </template>
 
 <style>

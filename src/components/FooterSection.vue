@@ -57,16 +57,20 @@ footer {
   display: flex;
   flex-direction: row;
   gap: 40px;
+  cursor: pointer;
 }
 .footerAppsIconDesktop {
   display: flex;
   gap: 25px;
 }
+.footerAppsIconDesktop img,
+.footerAppsIconMobile img {
+  cursor: pointer;
+}
 .footerAppsIconMobile {
-  height: 50px;
   display: none;
   height: fit-content;
-  padding: 10px;
+  padding-bottom: 15px;
   gap: 25px;
 }
 @media (max-width: 600px) {
@@ -91,5 +95,6 @@ footer {
 }
 .linkUnderline {
   text-decoration: underline;
+  cursor: pointer;
 }
 </style>

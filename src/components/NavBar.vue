@@ -19,20 +19,24 @@ import NavCategories from './NavCategories.vue'
         </div>
       </div>
       <div class="utilitiesContainer center">
-        <RouterLink class="link" to="/Account">
+        <RouterLink class="link" to="/Account/">
           <div class="utilitie center">
             <img src="/public/navBarIcons/accountIcon.svg" alt="accountIcon" />
             <p>Account</p>
           </div>
         </RouterLink>
-        <div class="utilitie center">
-          <img src="/public/navBarIcons/favouriteIcon.svg" alt="accountIcon" />
-          <p>Favourite</p>
-        </div>
-        <div class="utilitie center">
-          <img src="/public/navBarIcons/cartIcon.svg" alt="accountIcon" />
-          <p>Cart</p>
-        </div>
+        <RouterLink class="link" to="/Account/Favourites">
+          <div class="utilitie center">
+            <img src="/public/navBarIcons/favouriteIcon.svg" alt="accountIcon" />
+            <p>Favourite</p>
+          </div>
+        </RouterLink>
+        <RouterLink class="link" to="/Account/">
+          <div class="utilitie center">
+            <img src="/public/navBarIcons/cartIcon.svg" alt="accountIcon" />
+            <p>Cart</p>
+          </div>
+        </RouterLink>
       </div>
     </div>
     <div class="mobileView center">

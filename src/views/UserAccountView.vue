@@ -1,4 +1,11 @@
+<script setup>
+import { RouterLink } from 'vue-router'
+import { RouterView } from 'vue-router'
+import FooterSection from '@/components/FooterSection.vue'
+import NavBar from '@/components/NavBar.vue'
+</script>
 <template>
+  <NavBar />
   <div class="userAccountContainer">
     <div class="accountUtilitiesContainer center">
       <!--Tools-->
@@ -14,11 +21,19 @@
           <img src="/userAccountIcons/reviewsIcon.svg" alt="Reviews Icon" />
         </div>
         <div class="toolsDescriptionContainer">
-          <div class="toolsDescription">Cart</div>
-          <div class="toolsDescription">Orders</div>
-          <div class="toolsDescription">Favourites</div>
-          <div class="toolsDescription">Shipping Information</div>
-          <div class="toolsDescription">Reviews</div>
+          <RouterLink class="link" to="/Account/"
+            ><h4 class="toolsDescription">Cart</h4></RouterLink
+          >
+          <RouterLink class="link" to="Orders"><h4 class="toolsDescription">Orders</h4></RouterLink>
+          <RouterLink class="link" to="Favourites"
+            ><h4 class="toolsDescription">Favourites</h4></RouterLink
+          >
+          <RouterLink class="link" to="ShippingInformations"
+            ><h4 class="toolsDescription">Shipping Information</h4></RouterLink
+          >
+          <RouterLink class="link" to="Reviews"
+            ><h4 class="toolsDescription">Reviews</h4></RouterLink
+          >
         </div>
         <div class="counterContainer center">
           <h3 class="counter center">0</h3>
@@ -26,17 +41,44 @@
       </div>
       <!---->
       <!--Setting-->
-      <div class="settingsContainer">sd</div>
+      <div class="settingsContainer">
+        <div class="pageSettings center">
+          <div class="support center">
+            <img src="/userAccountIcons/supportIcon.svg" alt="Support Icon" />
+            <h3>Support</h3>
+          </div>
+          <div class="settings center">
+            <img src="/userAccountIcons/settingsIcon.svg" alt="Settings Icon" />
+            <h3>Settings</h3>
+          </div>
+        </div>
+        <div class="accountSettings center">
+          <img src="/userAccountIcons/avatarIcon.svg" alt="User Avatar" />
+          <div class="userInformationContainer center">
+            <h3 class="username">Name Username</h3>
+            <h3>email@electrohut.com</h3>
+          </div>
+          <img
+            src="/userAccountIcons/userSettingsIcon.svg"
+            class="userAccountSettings"
+            alt="Settings Icon"
+          />
+        </div>
+      </div>
     </div>
     <div class="cartContainer center">
-      <div class="cart"></div>
+      <div class="cart">
+        <RouterView></RouterView>
+      </div>
     </div>
   </div>
+
+  <FooterSection />
 </template>
 <style scoped>
 .userAccountContainer {
   width: 100vw;
-  height: 90vh;
+  height: 800px;
   display: flex;
   background-color: var(--white);
 }
@@ -52,8 +94,13 @@
 }
 .shopLogo {
   width: 110px;
+  margin-top: 15%;
 }
-
+@media (max-width: 920px) {
+  .accountUtilitiesContainer {
+    width: 35%;
+  }
+}
 /* Account Tools*/
 
 .accountToolsContainer {
@@ -83,6 +130,31 @@
   position: relative;
   left: -4px;
 }
+.toolIconsContainer img:hover {
+  box-shadow:
+    1px 1px 4px 1px rgba(0, 0, 0, 0.1) inset,
+    -2px -2px 1px white inset;
+  border-radius: 5px;
+}
+/* Tools Description */
+.toolsDescriptionContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  overflow: hidden;
+}
+.toolsDescription {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  color: #000;
+  text-decoration: none;
+}
+.link {
+  text-decoration: none;
+}
+/* Counter */
 .counterContainer {
   width: 20%;
   justify-content: flex-end;
@@ -93,39 +165,110 @@
   border-radius: 40%;
   cursor: default;
 }
-/* Tools Description */
-.toolsDescriptionContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+@media (max-width: 534px) {
+  .counterContainer {
+    display: none;
+  }
 }
-.toolsDescription {
-  display: flex;
-  flex-direction: row;
-  cursor: pointer;
-}
-.toolIconsContainer img:hover {
-  box-shadow:
-    1px 1px 4px 1px rgba(0, 0, 0, 0.1) inset,
-    -2px -2px 1px white inset;
-  border-radius: 5px;
-}
+
 /* Setting */
+
 .settingsContainer {
   width: 90%;
-  height: 350px;
+  height: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.pageSettings {
+  width: 100%;
+  height: 35%;
+  flex-direction: column;
+  align-items: flex-start;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
+  gap: 15px;
+}
+.settings,
+.support {
+  display: flex;
+  overflow: hidden;
+  gap: 10px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+/* Slide In Transition*/
+
+.pageSettings h3,
+.toolsDescriptionContainer h4 {
+  position: relative;
+}
+.pageSettings h3::before,
+.toolsDescriptionContainer h4::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
+}
+.pageSettings h3:hover::before,
+.toolsDescriptionContainer h4:hover::before {
+  transform: scaleX(1);
+}
+
+/* */
+.accountSettings {
+  width: 100%;
+  height: 25%;
+  justify-content: flex-start;
+}
+.accountSettings img {
+  cursor: pointer;
+}
+.userInformationContainer {
+  width: 70%;
+  flex-direction: column;
+  margin-left: 15px;
+}
+.userInformationContainer h3 {
+  display: flex;
+  align-self: flex-start;
+  font-size: 11px;
+  cursor: pointer;
+}
+.username {
+  font-weight: bold;
+}
+.userAccountSettings {
+  padding: 9px;
+  display: flex;
+  flex-wrap: wrap;
+}
+@media (max-width: 534px) {
+  .userAccountSettings {
+    display: none;
+  }
 }
 /* Right Side */
 .cartContainer {
   width: 73%;
 }
+@media (max-width: 920px) {
+  .cartContainer {
+    width: 60%;
+  }
+}
 .cart {
   height: 90%;
   width: 90%;
   border: 2px dashed grey;
+  padding: 15px 20px;
 }
 </style>
