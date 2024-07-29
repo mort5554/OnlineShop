@@ -97,7 +97,7 @@ nav {
   border: 1px solid var(--black);
   gap: 10px;
   padding: 10px;
-  background-color: white;
+  background-color: var(--white);
 }
 .magnifyIcon {
   width: 20px;

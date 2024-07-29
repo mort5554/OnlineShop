@@ -5,6 +5,7 @@ import SignUp from '../views/SignUpView.vue'
 import UserAccountView from '@/views/UserAccountView.vue'
 import ErrorView from '@/views/ErrorView.vue'
 import PageUnderConstruction from '@/views/PageUnderConstruction.vue'
+import ProductItemsView from '@/views/ProductItemsView.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -45,6 +46,31 @@ const router = createRouter({
           component: PageUnderConstruction
         }
       ]
+    },
+    {
+      path: '/underConstruction',
+      name: 'UnderConstruction',
+      component: PageUnderConstruction
+    },
+    {
+      path: '/Laptops',
+      name: 'Laptops',
+      component: ProductItemsView
+    },
+    {
+      path: '/Computers',
+      name: 'Computers',
+      component: ProductItemsView
+    },
+    {
+      path: '/Components',
+      name: 'Components',
+      component: ProductItemsView
+    },
+    {
+      path: '/Accessories',
+      name: 'Accessories',
+      component: ProductItemsView
     },
     //Catch all other paths
     {

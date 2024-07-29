@@ -1,23 +1,37 @@
-<script setup></script>
+<script setup>
+import { RouterLink } from 'vue-router'
+</script>
 <template>
   <div class="categoriesContainer center">
     <div class="category laptopsCategory center">
-      <h4>Laptops</h4>
+      <RouterLink to="/Laptops" class="link"><h4>Laptops</h4></RouterLink>
       <img class="arrowIcon" src="/public/navBarIcons/arrowLeftIcon.svg" />
     </div>
     <div class="category computersCategory center">
-      <h4 class="computersDesktop">Pre-built Computers</h4>
-      <h4 class="computersMobile">Computers</h4>
+      <RouterLink to="/Computers" class="link"
+        ><h4 class="computersDesktop">Pre-built Computers</h4></RouterLink
+      >
+      <RouterLink to="/Computers" class="link"
+        ><h4 class="computersMobile">Computers</h4></RouterLink
+      >
       <img class="arrowIcon" src="/public/navBarIcons/arrowLeftIcon.svg" />
     </div>
     <div class="category computerComponentsCategory center">
-      <h4 class="computerComponentsDesktop">Computer Components</h4>
-      <h4 class="computerComponentsMobile">Components</h4>
+      <RouterLink to="/Components" class="link"
+        ><h4 class="computerComponentsDesktop">Computer Components</h4></RouterLink
+      >
+      <RouterLink to="/Components" class="link"
+        ><h4 class="computerComponentsMobile">Components</h4></RouterLink
+      >
       <img class="arrowIcon" src="/public/navBarIcons/arrowLeftIcon.svg" />
     </div>
     <div class="category accessoriesCategory center">
-      <h4 class="externalHardwareDesktop">External hardware</h4>
-      <h4 class="externalHardwareMobile">Accessories</h4>
+      <RouterLink to="/Accessories" class="link"
+        ><h4 class="externalHardwareDesktop">External Hardware</h4></RouterLink
+      >
+      <RouterLink to="/Accessories" class="link"
+        ><h4 class="externalHardwareMobile">Accessories</h4></RouterLink
+      >
       <img class="arrowIcon" src="/public/navBarIcons/arrowLeftIcon.svg" />
     </div>
   </div>
@@ -41,6 +55,10 @@
 .arrowIcon {
   height: 32%;
   padding-left: 2%;
+}
+.link {
+  text-decoration: none;
+  color: var(--white);
 }
 .computerComponentsMobile,
 .computersMobile,

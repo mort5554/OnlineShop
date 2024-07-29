@@ -5,6 +5,12 @@ const isOpened2 = ref(false)
 const isOpened3 = ref(false)
 const isOpened4 = ref(false)
 const isOpened5 = ref(false)
+
+/*const element = [
+  {
+    title: "What is your return policy?", id: 1, description: ""
+  }
+]*/
 </script>
 <template>
   <div class="FAQsSectionContainer center">
@@ -222,7 +228,7 @@ const isOpened5 = ref(false)
 }
 .FAQsSectionLeft h1 {
   font-size: 70px;
-  color: black;
+  color: var(--black);
 }
 .FAQsSectionLeft h2 {
   margin-top: 10px;
@@ -259,7 +265,7 @@ const isOpened5 = ref(false)
 }
 .FAQsElement {
   width: fit-content;
-  border: 1px solid black;
+  border: 1px solid var(--black);
   padding: 25px;
 }
 .FAQsElementHeader {
@@ -279,7 +285,7 @@ const isOpened5 = ref(false)
   overflow: hidden;
   transition: max-height 0.4s ease-in-out;
   margin-top: 5px;
-  font-size: small;
+  font-size: 16px;
 }
 @media (max-width: 428px) {
   .FAQsElementOpened {

@@ -12,7 +12,7 @@
       <h3>
         Discover our wide range of laptops, desktop computers, components and accessories and
         <br />
-        complete your dream set.
+        complete your dream set
       </h3>
       <button class="searchButton">Shop Now</button>
     </div>

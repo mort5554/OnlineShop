@@ -7,7 +7,7 @@ import NavBar from '@/components/NavBar.vue'
 <template>
   <NavBar />
   <div class="userAccountContainer">
-    <div class="accountUtilitiesContainer center">
+    <div class="accountUtilitiesContainerDesktop center">
       <!--Tools-->
       <div class="shopLogoContainer">
         <img src="/public/logo.ico" class="shopLogo" alt="ElectroHut Logo" />
@@ -66,13 +66,13 @@ import NavBar from '@/components/NavBar.vue'
         </div>
       </div>
     </div>
+    <div class="accountUtilitiesContainerMobile center"></div>
     <div class="cartContainer center">
       <div class="cart">
         <RouterView></RouterView>
       </div>
     </div>
   </div>
-
   <FooterSection />
 </template>
 <style scoped>
@@ -82,12 +82,27 @@ import NavBar from '@/components/NavBar.vue'
   display: flex;
   background-color: var(--white);
 }
+@media (max-width: 544px) {
+  .accountUtilitiesContainerDesktop {
+    display: none;
+  }
+  .cartContainer {
+    width: 90%;
+  }
+}
 /* Left Side */
-.accountUtilitiesContainer {
+.accountUtilitiesContainerDesktop {
+  display: flex; /*Tutaj */
   width: 23%;
   height: 100%;
   flex-direction: column;
-  border-right: 1.5px solid black;
+  border-right: 1.5px solid var(--black);
+}
+/* Mobile */
+.accountUtilitiesContainerMobile {
+  width: 90vw;
+  display: none;
+  flex-direction: column;
 }
 .shopLogoContainer {
   width: 100%;
@@ -97,7 +112,7 @@ import NavBar from '@/components/NavBar.vue'
   margin-top: 15%;
 }
 @media (max-width: 920px) {
-  .accountUtilitiesContainer {
+  .accountUtilitiesContainerDesktop {
     width: 35%;
   }
 }
@@ -133,7 +148,7 @@ import NavBar from '@/components/NavBar.vue'
 .toolIconsContainer img:hover {
   box-shadow:
     1px 1px 4px 1px rgba(0, 0, 0, 0.1) inset,
-    -2px -2px 1px white inset;
+    -2px -2px 1px var(--white) inset;
   border-radius: 5px;
 }
 /* Tools Description */
@@ -148,7 +163,7 @@ import NavBar from '@/components/NavBar.vue'
   display: flex;
   flex-direction: row;
   cursor: pointer;
-  color: #000;
+  color: var(--black);
   text-decoration: none;
 }
 .link {
@@ -161,11 +176,11 @@ import NavBar from '@/components/NavBar.vue'
 }
 .counter {
   width: 30px;
-  border: 1px solid black;
+  border: 1px solid var(--black);
   border-radius: 40%;
   cursor: default;
 }
-@media (max-width: 534px) {
+@media (max-width: 580px) {
   .counterContainer {
     display: none;
   }
@@ -185,8 +200,8 @@ import NavBar from '@/components/NavBar.vue'
   height: 35%;
   flex-direction: column;
   align-items: flex-start;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  border-top: 1px solid var(--black);
+  border-bottom: 1px solid var(--black);
   gap: 15px;
 }
 .settings,
@@ -251,7 +266,7 @@ import NavBar from '@/components/NavBar.vue'
   display: flex;
   flex-wrap: wrap;
 }
-@media (max-width: 534px) {
+@media (max-width: 600px) {
   .userAccountSettings {
     display: none;
   }

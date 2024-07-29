@@ -89,7 +89,7 @@ import ProductsCard from './ProductsCard.vue'
 .bestsellersHeader h4,
 h1 {
   font-weight: 700;
-  color: black;
+  color: var(--black);
   font-size: 16px;
 }
 .bestsellersHeader h1 {

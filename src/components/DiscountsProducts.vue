@@ -56,7 +56,7 @@ import ProductsCard from './ProductsCard.vue'
 .discountsProductsHeader h4,
 h1 {
   font-weight: 700;
-  color: black;
+  color: var(--black);
 }
 .discountsProductsHeader h1 {
   font-size: 60px;

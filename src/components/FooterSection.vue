@@ -89,7 +89,7 @@ footer {
   height: fit-content;
   flex-wrap: wrap;
   text-align: center;
-  border-top: 1px solid black;
+  border-top: 1px solid var(--black);
   gap: 30px;
   padding-top: 25px;
 }
