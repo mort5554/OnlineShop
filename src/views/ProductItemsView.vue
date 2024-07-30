@@ -2,6 +2,7 @@
 import NavBar from '@/components/NavBar.vue'
 import FooterSection from '@/components/FooterSection.vue'
 import { useRoute } from 'vue-router'
+import ProductsCard from '@/components/ProductsCard.vue'
 
 const route = useRoute()
 </script>
@@ -145,10 +146,27 @@ const route = useRoute()
           <div class="activeFilters">
             <div class="filter center">
               <h3>HP</h3>
-              <h3>+</h3>
+              <h2>+</h2>
             </div>
           </div>
-          <div class="sortByContainer"></div>
+          <div class="sortByContainer">
+            <h3>Sort by</h3>
+            <img src="/mainPageIcons/sortByDropdownIcon.svg" alt="Sorty By Dropdown Icon" />
+          </div>
+        </div>
+        <div class="productListContainer">
+          <ProductsCard />
+          <ProductsCard />
+          <ProductsCard />
+          <ProductsCard />
+          <ProductsCard />
+          <ProductsCard />
+          <ProductsCard />
+          <ProductsCard />
+          <ProductsCard />
+
+          <ProductsCard />
+          <ProductsCard />
         </div>
       </div>
     </div>
@@ -180,6 +198,14 @@ const route = useRoute()
 }
 .productHeader p {
   font-size: 18px;
+}
+
+.productsContainer {
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 5%;
+  gap: 5%;
 }
 /* Filters*/
 .filtersContainer {
@@ -325,30 +351,53 @@ input:checked + .slider:before {
 }
 
 /* Right Side*/
-.productsContainer {
-  width: 95%;
-  display: flex;
-  flex-direction: row;
-  margin-top: 5%;
-  gap: 5%;
+.productsCardContainer {
+  width: 100%;
 }
+/* Filters */
 .activeFiltersContainer {
-  width: 90%;
+  width: 100%;
   height: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
+  margin-bottom: 40px;
 }
 .activeFilters {
+  width: 50%;
   display: flex;
-
-  width: fit-content;
+  gap: 20px;
 }
 .filter {
   width: 65px;
   height: 35px;
   justify-content: space-evenly;
   background-color: #eeeeee;
+}
+.filter h2 {
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+.sortByContainer {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+.sortByContainer img {
+  cursor: pointer;
+}
+
+/* Products List*/
+.productListContainer {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px;
+  border: 1px dashed grey;
+  padding: 5px;
 }
 </style>
